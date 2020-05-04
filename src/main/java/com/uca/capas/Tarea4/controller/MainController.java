@@ -17,21 +17,21 @@ import com.uca.capas.Tarea4.domain.Producto;
 public class MainController {
 	
 	@GetMapping("/producto")
-	public String enviarForm(Producto product) {
+	public String enviarForm(Producto producto) {
 		return "index";
 	}
 	
 	
 	
 	@PostMapping("/formData")
-	public ModelAndView procesar(@Valid @ModelAttribute Producto product, BindingResult result) {
+	public ModelAndView procesar(@Valid @ModelAttribute Producto producto, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
 			mav.setViewName("exito");
 		}else {
 			mav.setViewName("fallo");
-			mav.addObject("producto", product);
+			mav.addObject("producto", producto);
 		}		
 		
 		return mav;

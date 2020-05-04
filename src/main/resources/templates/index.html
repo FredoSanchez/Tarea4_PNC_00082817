@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingreso</title>
+</head>
+<body>
+	<h1>Ingresar producto</h1>
+
+	<form th:action="@{/formData}" th:object="${producto}" method="post">
+		<label>Código de Producto Universal (12 dígitos): </label><input type="text" th:field="*{codigo}"><br>
+		<label>Nombre Producto (100 caracteres): </label><input type="text" th:field="*{nombre}"><br>
+		<label>Marca (100 caracteres): </label><input type="text" th:field="*{marca}"><br>
+		<label>Descripción (500 caracteres): </label><input type="text" th:field="*{descripcion}"><br>
+		<label>Existencias (Número sin decimales): </label><input type="text" th:field="*{existencias}"><br>
+		<label>Fecha de ingreso (fecha en formato dd/mm/yyyy): </label><input type="text" th:field="*{fecha}"><br>
+		
+		<input type="submit" value="Guardar producto">
+	</form>
+</body>
+</html>
