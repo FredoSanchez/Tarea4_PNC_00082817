@@ -28,9 +28,9 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
-			mav.setViewName("exito");
+			mav.setViewName("index");
 		}else {
-			mav.setViewName("fallo");
+			mav.setViewName("exito");
 			mav.addObject("producto", producto);
 		}		
 		

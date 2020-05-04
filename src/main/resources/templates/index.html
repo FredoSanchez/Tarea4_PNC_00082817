@@ -9,11 +9,22 @@
 
 	<form th:action="@{/formData}" th:object="${producto}" method="post">
 		<label>Código de Producto Universal (12 dígitos): </label><input type="text" th:field="*{codigo}"><br>
+		<span th:errors="*{codigo}" style="color:red"></span>
+		
 		<label>Nombre Producto (100 caracteres): </label><input type="text" th:field="*{nombre}"><br>
+		<span th:errors="*{nombre}" style="color:red"></span>
+		
 		<label>Marca (100 caracteres): </label><input type="text" th:field="*{marca}"><br>
+		<span th:errors="*{marca}" style="color:red"></span>
+		
 		<label>Descripción (500 caracteres): </label><input type="text" th:field="*{descripcion}"><br>
-		<label>Existencias (Número sin decimales): </label><input type="text" th:field="*{existencias}"><br>
-		<label>Fecha de ingreso (fecha en formato dd/mm/yyyy): </label><input type="text" th:field="*{fecha}"><br>
+		<span th:errors="*{descripcion}" style="color:red"></span>
+		
+		<label>Existencias (Número sin decimales): </label><input type="number" th:field="*{existencias}"><br>
+		<span th:errors="*{existencias}" style="color:red"></span>
+		
+		<label>Fecha de ingreso (fecha en formato dd/mm/yyyy): </label><input type="text" th:field="*{fechaIngreso}"><br>
+		<span th:errors="*{fechaIngreso}" style="color:red"></span>
 		
 		<input type="submit" value="Guardar producto">
 	</form>
